@@ -9,6 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -17,6 +18,544 @@
             body{
                 font-family: 'Be Vietnam', sans-serif;
             }
+            a:hover{
+                text-decoration: none;
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+                font-weight: 700;
+                color: #404145;
+                margin-bottom: 0px;
+            }
+
+            .popular-services{
+                padding: 50px 0;
+            }
+
+            .popular-services .title {
+                display: block;
+                text-align: left;
+            }
+            .popular-services .title h1{
+                font-size: 28px;
+                padding-bottom: 25px;
+            }
+            .popular-services .section-box{
+                position: relative;
+                height: 345px;
+                width: 250px;
+                overflow: hidden;
+                border-radius: 5px;
+            }
+            .popular-services .section-box a{
+                display: block;
+            }
+            .popular-services .section-box a:hover{
+                text-decoration: none;
+            }
+            .popular-services .section-box .text{
+                z-index: 1;
+                position: relative;
+                padding: 12px;
+            }
+            .popular-services .section-box .text h6{
+                color: #FFF;
+                font-size: 15px;
+                font-weight: 500;
+                margin-bottom: 2px;
+            }
+            .popular-services .section-box .text h4{
+                color: #FFF;
+                font-size: 25px;
+                font-weight: 600;
+                margin-bottom: 0px;
+            }
+            .popular-services .section-box .image{
+
+            }
+            .popular-services .section-box .image img{
+                -o-object-fit: cover;
+                object-fit: cover;
+                height: 345px;
+                width: 100%;
+                border-radius: 4px;
+                -webkit-transition: opacity .3s ease-in-out;
+                -o-transition: opacity .3s ease-in-out;
+                transition: opacity .3s ease-in-out;
+                position: absolute;
+                top: 0;
+            }
+
+
+            /* front intro css */
+            .front-intro{
+                background-color: #f1fdf7;
+                padding: 50px 0;
+            }
+            .front-intro .text{
+               
+            }
+            .front-intro .text h2{
+                font-size: 28px;
+                padding-bottom: 25px;
+            }
+            .front-intro .text ul{
+                list-style: none;
+                margin: 0px;
+                padding: 0px;
+            }
+            .front-intro .text ul li{
+                padding: 10px 0;
+            }
+            .front-intro .text ul li h6{
+                font-size: 18px;
+                margin-bottom: 5px;
+                line-height: 30px;
+            }
+            .front-intro .text ul li h6 i{ 
+                color: #62646a;
+                font-size: 20px;
+                padding-right: 5px;
+            }
+            .front-intro .text ul li p{ 
+                font-size: 16px;
+                font-weight: 400;
+                color: #62646a;
+                line-height: 22px;
+                margin-bottom: 0px;
+                text-align: left;
+            }
+
+            .front-intro .modal-wrapper{
+
+            }
+
+            .front-intro .modal-wrapper .image{
+                display: block;
+                overflow: hidden;
+                border-radius: 10px;
+            }
+
+            .front-intro .modal-wrapper .image img{
+                height: 100%;
+                width: 100%;
+            }
+
+
+            @media only screen and (min-width: 768px){
+                .front-intro .text{
+                    padding-right: 10%;
+                }
+            }
+
+            @media only screen and (max-width: 768px){
+                .front-intro .text{
+                    padding-bottom: 30px;
+                }
+            }
+
+
+            .explore-market{
+                padding: 50px 0;
+            }
+            .explore-market h2{
+                font-size: 28px;
+                padding-bottom: 50px;
+            }
+            
+            .explore-market ul.categories-list{
+                padding: 0px;
+                margin: 0px;
+                list-style: none;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+            }
+            
+            .explore-market ul.categories-list li{
+                width: 20%;
+                padding-bottom: 60px;
+            }
+            
+            .explore-market ul.categories-list li a{
+                display: block;
+                position: relative;
+                font-size: 15px;
+                text-align: center;
+                font-weight: 500;
+                color: #62646a;
+            }
+            
+            .explore-market ul.categories-list li a::after{
+                content: '';    
+                position: absolute;
+                top: 55px;
+                right: 50%;
+                -webkit-transform: translateX(50%);
+                -ms-transform: translateX(50%);
+                    transform: translateX(50%);
+                width: 50px;
+                height: 2px;
+                background-color: #62646a;
+                -webkit-transition: width .3s;
+                -o-transition: width .3s;
+                transition: width .3s;
+                background-position: left top;
+
+            }
+            
+            .explore-market ul.categories-list li a:hover{
+                color: #000;
+                text-decoration: none;
+            }
+            
+            .explore-market ul.categories-list li a:hover::after{
+                background-color: #1dbf73;
+                width: 50%;
+            }
+            
+            .explore-market ul.categories-list li a img{
+                height: 50px;
+                width: 50px;
+                display: block;
+                margin: 0  auto 15px;
+            }
+
+            @media only screen and (max-width: 886px){
+                .explore-market ul.categories-list li{
+                width: 33.33%;
+                padding-bottom: 60px;
+                }
+            }
+
+            @media only screen and (max-width: 596px){
+                .explore-market ul.categories-list li{
+                width: 50%;
+                padding-bottom: 60px;
+                }
+            }
+
+
+            /* testimonials css */
+
+            .testimonial{
+                padding-bottom: 50px;
+            }
+
+            .testimonial .image{
+                overflow: hidden;
+                border-radius: 10px;
+            }
+
+            .testimonial .image img{
+                height: 100%;
+                width: 100%;
+            }
+            .testimonial .text{
+
+            }
+            .testimonial .text h4{
+                font-size: 17px;
+                display: block;
+                font-weight: 500;
+                color: #7a7d85;
+                padding-bottom: 10px;
+            }
+            .testimonial .text h4 span{
+                border-left: 1px solid #c5c6c9;
+                margin-left: 5px;
+            }
+            .testimonial .text h4 span img{
+                vertical-align: center;
+                height: 38px;
+                padding-left: 5px;
+            }
+            .testimonial .text blockquote{
+                color: #003912;
+                font-size: 26px;
+                line-height: 38px;
+                font-weight: 500;
+                font-style: italic;
+                padding: 5px;
+                text-align: left;    
+            }
+
+            @media only screen and (min-width: 768px){
+                .testimonial .text{
+                    padding-left: 7%;
+                }
+            }
+
+            @media only screen and (max-width: 768px){
+                .testimonial .text{
+                    padding-top: 30px;
+                }
+            }
+
+
+            /* get-inspired css */
+
+            .get-inspired{
+                padding: 50px 0;
+                background-color: #f5f5f5;
+            }
+
+            .get-inspired .title{
+                display: block;
+                text-align: left;
+
+            }
+
+            .get-inspired .title h2{
+                font-size: 28px;
+                padding-bottom: 25px;
+            }
+
+            .get-inspired .box-wrapper{
+                background-color: #FFF;
+                width: 300px;
+                -webkit-box-shadow: 0 0.14px 2.29266px rgb(0 0 0 / 3%), 0 0.37px 4.42626px rgb(0 0 0 / 5%), 0 3px 7px rgb(0 0 0 / 9%);
+                box-shadow: 0 0.14px 2.29266px rgb(0 0 0 / 3%), 0 0.37px 4.42626px rgb(0 0 0 / 5%), 0 3px 7px rgb(0 0 0 / 9%);
+            }
+
+            .get-inspired .box-wrapper a{
+                display: block;
+
+            }
+
+            .get-inspired .box-wrapper a:hover{
+                text-decoration: none;
+
+            }
+            .get-inspired .box-wrapper .image{
+                width: 100%;
+                overflow: hidden;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+            }
+            .get-inspired .box-wrapper .image img{
+                width: 100%;
+                height: 100%;
+                -o-object-fit: cover;
+                   object-fit: cover;
+            }
+
+
+
+            .get-inspired .box-wrapper .image img:hover{
+                opacity: .85;
+                -webkit-transition: 1s;
+                -moz-transition: 1s;
+                -ms-transition: 1s;
+                -o-transition: 1s;
+            }
+            .get-inspired .box-wrapper .text{
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                padding: 10px;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+            }
+            .get-inspired .box-wrapper .text .profile-icon{
+                width: 50px;
+                height: 50px;
+                overflow: hidden;
+                border-radius: 100%;
+                margin-right: 15px;
+            }
+
+            .get-inspired .box-wrapper .text .profile-icon img{
+                height: 100%;
+                width: 100%;
+                -o-object-fit: cover;
+                   object-fit: cover;
+            }
+            .get-inspired .box-wrapper .text .info{
+                text-align: left;
+            }
+            .get-inspired .box-wrapper .text .info h5{
+                font-size: 14px;
+                margin-bottom: 2px;
+                list-style: 24px;
+            }
+            .get-inspired .box-wrapper .text .info h5 a{
+                color: #000;
+            }
+            .get-inspired .box-wrapper .text .info span{
+                font-weight: 400;
+                display: block;
+                font-size: 15px;
+                list-style: 24px;
+            }
+            .get-inspired .box-wrapper .text .info span a{
+                color: #7a7d85;
+            }
+
+
+            /* guides css */
+
+            .guides{
+                padding: 50px 0;
+
+            }
+
+            .guides .title{
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: baseline;
+                    -ms-flex-align: baseline;
+                        align-items: baseline;
+                padding-bottom: 25px;
+                -webkit-box-pack: justify;
+                    -ms-flex-pack: justify;
+                        justify-content: space-between;
+            }
+
+            .guides .title h2{
+                font-size: 28px;
+            }
+
+            .guides .title a{
+                font-size: 16px;
+                font-weight: 400;
+            }
+
+        .guides .title a i{
+            font-size: 13px;
+            padding-left: 3px;
+        }
+
+        .guides .box-wrapper{
+            width: 100%;
+            display: block;
+        }
+
+        .guides .box-wrapper .image{
+            overflow: hidden;
+            border-radius: 5px;
+            padding-bottom: 15px;
+        }
+
+        .guides .box-wrapper .image img{
+            -o-object-fit: cover;
+               object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+
+        .guides .box-wrapper .image img:hover{
+                opacity: .85;
+                -webkit-transition: 1s;
+                -moz-transition: 1s;
+                -ms-transition: 1s;
+                -o-transition: 1s;
+            }
+
+        .guides .box-wrapper .text{
+            
+        }
+
+        .guides .box-wrapper .text h5{
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        .guides .box-wrapper .text p{
+            font-size: 16px;
+            font-weight: 400;
+            color: #62646a;
+            line-height: 22px;
+            margin-bottom: 0px;
+            text-align: left;
+        }
+
+        @media only screen and (max-width: 768px){
+            .guides .box-wrapper{
+                padding-bottom: 30px;
+             }
+            }
+
+            /* fornt-signup css */
+
+            .fornt-signup{
+                padding: 50px 0;
+            }
+            .fornt-signup .box-wrapper{
+                height: 350px;
+                overflow: hidden;
+                width: 100%;
+                position:relative;
+                padding: 100px;
+                background-color: #4a121d;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+            }
+            .fornt-signup .box-wrapper .image{
+                display: block;
+            }
+            .fornt-signup .box-wrapper .image img{
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 100%;
+                -o-object-fit: cover;
+                object-fit: cover;
+            }
+            .fornt-signup .box-wrapper .text{
+                z-index: 5;
+                position: relative;
+            }
+            .fornt-signup .box-wrapper .text h2{
+                color: #FFF;
+                font-size: 30px;
+                font-weight: 800;
+                line-height: 36px;
+                margin-bottom: 30px;
+                display: block;
+            }
+            .fornt-signup .box-wrapper .text h2 span{
+                font-style: italic;
+                font-weight: 700;
+                font-size: 26px;
+            }
+            .fornt-signup .box-wrapper .text a.button-signup{
+                color: #FFF;
+                background-color: #1dbf73;
+                font-weight: 600;
+                padding: 8px 20px;
+                border-radius: 5px;
+                display: inline-block;
+
+            }
+
+            @media only screen and (max-width: 768px){
+                .fornt-signup .box-wrapper .image{
+                display: none;
+                }
+
+                .fornt-signup .box-wrapper{
+                    padding: 20px;
+                    height: 300px;
+                }
+            }
+
+            @media only screen and (min-width: 768px){
+                .fornt-signup .box-wrapper .text{
+                width: 400px;
+                }
+            }
+            
+    
         </style>
 
 
@@ -26,8 +565,251 @@
                     <h1>Popular professional services</h1>
                 </div>
 
+                <div class="section-box">
+                    <a href="#">
+                        <div class="text">
+                            <h6>
+                                Build your brand
+                            </h6>
+                            <h4>
+                                Logo Design
+                            </h4>
+                        </div>
+                        <div class="image">
+                            <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_550,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/logo-design-2x.png" alt="" title="">
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+        
+        <section class="front-intro">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 ">
+                        <div class="text">
+                            <h2>
+                                A whole world of freelance talent at your fingertips
+                            </h2>
+                            <ul>
+                                <li>
+                                    <h6>
+                                        <i class="far fa-check-circle"></i>
+                                        The best for every budget
+                                    </h6>
+                                    <p>
+                                        Find high-quality services at every price point. No hourly rates, just project-based pricing.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h6>
+                                        <i class="far fa-check-circle"></i>
+                                        Quality work done quickly
+                                    </h6>
+                                    <p>
+                                        Find the right freelancer to begin working on your project within minutes.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h6>
+                                        <i class="far fa-check-circle"></i>
+                                        Protected payments, every time
+                                    </h6>
+                                    <p>
+                                        Always know what you'll pay upfront. Your payment isn't released until you approve the work.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h6>
+                                        <i class="far fa-check-circle"></i>
+                                        24/7 support
+                                    </h6>
+                                    <p>
+                                        Questions? Our round-the-clock support team is available to help anytime, anywhere.                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-7 my-auto">
+                        <div class="modal-wrapper">
+                            <div class="image">
+                                <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_700,dpr_1.0/v1/attachments/generic_asset/asset/089e3bb9352f90802ad07ad9f6a4a450-1599517407052/selling-proposition-still-1400-x1.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <section class="explore-market">
+            <div class="container">
+                <h2>
+                    Explore the marketplace 
+                </h2>
+                <ul class="categories-list">
+                    <li>
+                        <a>
+                           <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/graphics-design.d32a2f8.svg" alt="" title=""> 
+                           Graphics & Design
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                           <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/online-marketing.74e221b.svg" alt="" title=""> 
+                           Digital Marketing
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                           <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/writing-translation.32ebe2e.svg" alt="" title=""> 
+                           Writing & Translation
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                           <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/video-animation.f0d9d71.svg" alt="" title=""> 
+                           Video & Animation
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                           <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/music-audio.320af20.svg" alt="" title=""> 
+                           Music & Audio
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                           <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/programming.9362366.svg" alt="" title=""> 
+                           Programming & Tech
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                           <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/business.bbdf319.svg" alt="" title=""> 
+                           Business
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                           <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/lifestyle.745b575.svg" alt="" title=""> 
+                           Lifestyle
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                           <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/data.718910f.svg" alt="" title=""> 
+                           Data
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="testimonial">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 my-auto">
+                        <div class="image">
+                            <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_560,dpr_1.0/v1/attachments/generic_asset/asset/42a6fd208670a0361b38bd72b47b9317-1599519173396/testimonial-video-still-lavender.jpg" alt="" title="">
+                        </div>
+                    </div>
+                    <div class="col-md-7 my-auto">
+                        <div class="text">
+                            <h4>
+                                Brighid Gannon (DNP, PMHNP-BC), Co-Founder
+                                <span class="company-logo">
+                                    <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/lavender-logo-x2.89c5e2e.png" alt="" title="">
+                                </span>
+                            </h4>
+                            <blockquote>
+                                "We used Fiverr for SEO, our logo, website, copy, animated videos — literally everything. It was like working with a human right next to you versus being across the world."
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="get-inspired">
+            <div class="container">
+                <div class="title">
+                    <h2>Get inspired with projects made by our freelancers</h2>
+                </div>
+                <div class="box-wrapper">
+                    <div class="image">
+                       <a href="">
+                        <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_320,dpr_1.0/v1/attachments/generic_asset/asset/f23a46693ef0e611430e232cbc989e2b-1617004615069/noneyn.png" alt="" title="">
+                       </a>
+                    </div>
+                    <div class="text">
+                        <div class="profile-icon">
+                            <a href="">
+                                <img src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/23b01eca3b78e2869e149efe15d3066a-1613424545655/0aaffa8e-01e0-4dcb-b56d-674e9b9c4bf5.jpg" alt="" title="">
+                            </a>
+                        </div>
+                        <div class="info">
+                            <h5>
+                               <a href=""> Flyer Design</a>
+                            </h5>
+                            <span>
+                                <a href="#"> by noneyn</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="guides">
+            <div class="container">
+                <div class="title">
+                    <h2>Fuchas guides</h2>
+                    <a href="#" target="_blank">See More Guides <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="box-wrapper">
+                            <a href="">
+                                <div class="image">
+                                    <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_450,dpr_1.0/v1/attachments/generic_asset/asset/d532c0ad4feed007b3899cebad595286-1599611560157/guide-start-online-business-552-x2.png" alt="" title="">
+                                </div>
+                                <div class="text">
+                                    <h5>Start an online business and work from home</h5>
+                                    <p>A complete guide to starting a small business online</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="box-wrapper">
+                            <a href="">
+                                <div class="image">
+                                    <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_450,dpr_1.0/v1/attachments/generic_asset/asset/d532c0ad4feed007b3899cebad595286-1599611560157/guide-start-online-business-552-x2.png" alt="" title="">
+                                </div>
+                                <div class="text">
+                                    <h5>Start an online business and work from home</h5>
+                                    <p>A complete guide to starting a small business online</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="fornt-signup">
+            <div class="container">
+                <div class="box-wrapper">
+                    <div class="image">
+                        <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_1400,dpr_1.0/v1/attachments/generic_asset/asset/50218c41d277f7d85feeaf3efb4549bd-1599072608122/bg-signup-1400-x1.png" alt="" title="">
+                    </div>
+                    <div class="text">
+                        <h2>
+                            Find the <span>talent</span> needed to get your business <span>growing</span>.
+                        </h2>
+                        <a class="button-signup" href="#">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 </body>
 </html>
