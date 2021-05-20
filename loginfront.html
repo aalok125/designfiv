@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+        <style>
+            .temp-width{
+                width: 250px;
+            }
+            body{
+                font-family: 'Be Vietnam', sans-serif;
+            }
+            a:hover{
+                text-decoration: none;
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+                font-weight: 700;
+                color: #404145;
+                margin-bottom: 0px;
+            }
+
+            .font-banner{
+                padding: 25px 0;
+            }
+
+            .font-banner .box-wrapper{
+                display: flex;
+                flex-direction: row;
+                height: 220px;
+            }
+
+            .font-banner .box-wrapper  .left-box-wrapper{
+
+                background: #fafafa;
+                border: 1px solid #efeff0;
+                border-radius: 5px;
+                text-align: center;
+                padding: 10px 20px;
+                display: flex;
+                flex-direction: column;
+                width: 270px;
+                margin-right: 30px;
+                align-items: center;
+                justify-content: center;
+
+            }
+
+            .font-banner .box-wrapper  .left-box-wrapper span{
+                display: block;
+                text-transform: capitalize;
+                font-weight: 600;
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .font-banner .box-wrapper  .left-box-wrapper p{
+                font-size: 16px;
+                line-height: 22px;
+                margin-bottom: 15px;
+            }
+
+            .font-banner .box-wrapper .left-box-wrapper a{
+                color: #1dbf73;
+                border: 1px solid #1dbf73;
+                border-radius: 3px;
+                padding: 5px 20px;
+                font-size: 15px;
+                font-weight: 600;
+
+            }
+
+            .font-banner .box-wrapper .right-box-wrapper{
+                width: 100%;
+            }
+
+            .font-banner .box-wrapper .right-box-wrapper a{
+                
+            }
+
+            .font-banner .box-wrapper .right-box-wrapper .background-image{
+               height: 100%;
+               background-position: center center;
+               background-repeat: no-repeat;
+                background-size: cover;
+                background-image: linear-gradient(90deg,rgba(34,35,37,.8),rgba(34,35,37,0)),var(--image-url);
+            }
+
+            .font-banner .box-wrapper .right-box-wrapper .background-image .text{
+                
+                padding: 20px;
+            }
+
+            .font-banner .box-wrapper .right-box-wrapper .background-image .text h2{
+                color: #FFF;
+                font-size: 26px;
+                line-height: 35px;
+                margin-bottom: 5px;
+            }   
+
+            .font-banner .box-wrapper .right-box-wrapper .background-image .text p{
+                color: #FFF;
+                font-size: 18px; 
+                line-height: 30px;
+            }
+
+            @media only screen and (max-width: 768px){
+                .font-banner .box-wrapper  .left-box-wrapper{
+                   display: none;
+                }
+                .font-banner .box-wrapper{
+                    height: 270px;
+                }
+
+                .font-banner .box-wrapper .right-box-wrapper .background-image {
+                    display: flex;
+                    align-items: flex-end;
+                }
+            }
+
+            /* gig list css */
+
+            .gig-list{
+                padding: 25px 0;
+            }
+
+            .section-title {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: baseline;
+                    -ms-flex-align: baseline;
+                        align-items: baseline;
+                padding-bottom: 25px;
+                -webkit-box-pack: justify;
+                    -ms-flex-pack: justify;
+                        justify-content: space-between;
+            }
+
+            .section-title h2{
+                font-size: 26px;
+                line-height: 35px;
+            }
+
+            .section-title h2 a{
+                font-size: 26px;
+                font-weight: 700;
+                color: #4a73e8;
+            }
+
+            .section-title a{
+                font-size: 16px;
+                font-weight: 400;
+            }
+
+            .section-title a i{
+            font-size: 13px;
+            padding-left: 3px;
+        }
+
+        .gig-list .title a i{
+            font-size: 13px;
+            padding-left: 3px;
+        }
+
+        .gig-list .section-wrapper{
+
+        }
+        .gig-list.row-list .section-wrapper .gig-box{
+            margin-bottom: 30px;
+        }
+        .gig-list .section-wrapper .gig-box{
+            background-color: #fff;
+            position: relative;
+            border: 1px solid #e4e5e7;
+        }
+        .gig-list .section-wrapper .gig-box:hover .gig-info h3 a{
+            color: #02c2a9
+        }
+        .gig-list .section-wrapper .gig-box .image{
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        .gig-list .section-wrapper .gig-box .image img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .gig-list .section-wrapper .gig-box .seller-info{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: start;
+            padding: 0px 10px;
+            margin-bottom: 10px;
+        }
+        .gig-list .section-wrapper .gig-box .seller-info .seller-icon{
+            height: 40px;
+            width: 40px;
+            overflow: hidden;
+            border-radius: 100%;
+            margin-right: 10px;
+        }
+        .gig-list .section-wrapper .gig-box .seller-info .seller-icon img{
+            width: 100%;
+            height: 100%;
+        }
+        .gig-list .section-wrapper .gig-box .seller-info .seller-name{
+            display: block;
+        }
+        .gig-list .section-wrapper .gig-box .seller-info .seller-name a{
+            color: #222325;
+            font-size: 15px;
+            line-height: 26px;
+        }
+        .gig-list .section-wrapper .gig-box .gig-info{
+            
+        }
+        .gig-list .section-wrapper .gig-box .gig-info h3{
+            padding: 0px 10px;
+            font-size: 17px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            line-height: 23px;
+            text-align: left;
+        }
+        .gig-list .section-wrapper .gig-box .gig-info h3 a{
+            color: #222325;
+        }
+        .gig-list .section-wrapper .gig-box .gig-info .rating-wrapper{
+            display: block;
+            color: #b5b6ba;
+            margin-bottom: 10px;
+            padding: 0px 10px
+        }
+        .gig-list .section-wrapper .gig-box .gig-info .rating-wrapper .gig-rating{
+            color: #ffbe5b;
+            padding-right: 5px;
+            font-weight: 500;
+        }
+        .gig-list .section-wrapper .gig-box .gig-info .rating-wrapper .gig-rating i{
+            
+        }
+        .gig-list .section-wrapper .gig-box .gig-info .gig-ext{
+           display: flex; 
+           justify-content: space-between;
+           flex-direction: row;
+           align-items: center;
+           border-top: 1px solid #e4e5e7;
+           padding: 10px 10px
+        }
+        .gig-list .section-wrapper .gig-box .gig-info .gig-ext button{
+            background: none;
+            border: none;
+            padding: 0px 5px;
+            color: #b5b6ba;
+        }
+        .gig-list .section-wrapper .gig-box .gig-info .gig-ext button{
+            font-size: 17px;
+        }
+        .gig-list .section-wrapper .gig-box .gig-info .gig-ext .gig-price a{ 
+            color: #62646a;
+            font-size: 17px;
+            font-weight: 400;
+        }
+        .gig-list .section-wrapper .gig-box .gig-info .gig-ext .gig-price span{
+            font-size: 14px;
+            padding-right: 5px;
+        }
+                            
+        </style>
+
+
+        <section class="font-banner">
+            <div class="container">
+                <div class="box-wrapper">
+                    <div class="left-box-wrapper">
+                        <span>Hi Aalok,</span>
+                        <p>
+                            Get offers from sellers for your project 
+                        </p>
+    
+                        <a href="">
+                            Post a Request
+                        </a>
+                    </div>
+                    <div class="right-box-wrapper" >
+                        <a href="#">
+                            <div class="background-image" style="--image-url:url('https://fiverr-res.cloudinary.com/q_auto,f_auto/attachments/generic_asset/asset/5000bfd1ed312e59af85d2c34fda8280-1567435825397/Store3%20-%20headerX2.jpg');">
+                                <div class="text">
+                                    <h2>
+                                        Referred your friends yet?
+                                    </h2>
+                                    <p>
+                                        Refer a friend and earn up to $100.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gig-list">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Continue browsing </h2>
+                    <a href="#" target="_blank">See All <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="section-wrapper">
+                    <div class="gig-box temp-width">
+                        <div class="image">
+                            <a href="#">
+                                <img src="https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/153039280/original/b7a0f5d8af69ac751ab2750f8fa0ca8eebc78345.png" title="" alt="">
+                            </a>
+                        </div>
+                        <div class="seller-info">
+                            <div class="seller-icon">
+                               <a href="#">
+                                <img src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/ca4e67db50716f8c7a84fae691911fd2-1615370502172/14b40b1f-8067-4f70-a6c6-8b2a2af8d076.jpg" alt="">
+                               </a>
+                            </div>
+                            <div class="seller-name">
+                                <a href="#">winky_axe </a>
+                            </div>
+                        </div>
+                        <div class="gig-info">
+                            <h3>
+                                <a href="">
+                                    I will design your logo and branding
+                                </a>
+                            </h3>
+                            <div class="rating-wrapper">
+                                <span class="gig-rating"><i class="fas fa-star"></i> 5.0</span>(14)  
+                            </div>
+                            <div class="gig-ext">
+                                <div class="gig-btn">
+                                    <button class="save-action">
+                                        <i class="fas fa-bars"></i>
+                                    </button>
+                                    <button class="save-gig">
+                                        <i class="fas fa-heart"></i> 
+                                    </button>
+                                </div>
+                                <div class="gig-price">
+                                    <a href="#"><span>Starting at</span> $60</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gig-list">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Because you saved
+                        <a href="#" target="_blank">design adorable kids baby logo baby products design</a>
+                    </h2>
+                </div>
+                <div class="section-wrapper">
+                    <div class="gig-box temp-width">
+                        <div class="image">
+                            <a href="#">
+                                <img src="https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/153039280/original/b7a0f5d8af69ac751ab2750f8fa0ca8eebc78345.png" title="" alt="">
+                            </a>
+                        </div>
+                        <div class="seller-info">
+                            <div class="seller-icon">
+                               <a href="#">
+                                <img src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/ca4e67db50716f8c7a84fae691911fd2-1615370502172/14b40b1f-8067-4f70-a6c6-8b2a2af8d076.jpg" alt="">
+                               </a>
+                            </div>
+                            <div class="seller-name">
+                                <a href="#">winky_axe </a>
+                            </div>
+                        </div>
+                        <div class="gig-info">
+                            <h3>
+                                <a href="">
+                                    I will design your logo and branding
+                                </a>
+                            </h3>
+                            <div class="rating-wrapper">
+                                <span class="gig-rating"><i class="fas fa-star"></i> 5.0</span>(14)  
+                            </div>
+                            <div class="gig-ext">
+                                <div class="gig-btn">
+                                    <button class="save-action">
+                                        <i class="fas fa-bars"></i>
+                                    </button>
+                                    <button class="save-gig">
+                                        <i class="fas fa-heart"></i> 
+                                    </button>
+                                </div>
+                                <div class="gig-price">
+                                    <a href="#"><span>Starting at</span> $60</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gig-list">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Most popular Gigs in 
+                        <a href="#" target="_blank">Marketing Strategy </a>
+                    </h2>
+                </div>
+                <div class="section-wrapper">
+                    <div class="gig-box temp-width">
+                        <div class="image">
+                            <a href="#">
+                                <img src="https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/153039280/original/b7a0f5d8af69ac751ab2750f8fa0ca8eebc78345.png" title="" alt="">
+                            </a>
+                        </div>
+                        <div class="seller-info">
+                            <div class="seller-icon">
+                               <a href="#">
+                                <img src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/ca4e67db50716f8c7a84fae691911fd2-1615370502172/14b40b1f-8067-4f70-a6c6-8b2a2af8d076.jpg" alt="">
+                               </a>
+                            </div>
+                            <div class="seller-name">
+                                <a href="#">winky_axe </a>
+                            </div>
+                        </div>
+                        <div class="gig-info">
+                            <h3>
+                                <a href="">
+                                    I will design your logo and branding
+                                </a>
+                            </h3>
+                            <div class="rating-wrapper">
+                                <span class="gig-rating"><i class="fas fa-star"></i> 5.0</span>(14)  
+                            </div>
+                            <div class="gig-ext">
+                                <div class="gig-btn">
+                                    <button class="save-action">
+                                        <i class="fas fa-bars"></i>
+                                    </button>
+                                    <button class="save-gig">
+                                        <i class="fas fa-heart"></i> 
+                                    </button>
+                                </div>
+                                <div class="gig-price">
+                                    <a href="#"><span>Starting at</span> $60</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gig-list row-list">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Gigs you may like 
+                    </h2>
+                </div>
+                <div class="section-wrapper">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="gig-box">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/153039280/original/b7a0f5d8af69ac751ab2750f8fa0ca8eebc78345.png" title="" alt="">
+                                    </a>
+                                </div>
+                                <div class="seller-info">
+                                    <div class="seller-icon">
+                                       <a href="#">
+                                        <img src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/ca4e67db50716f8c7a84fae691911fd2-1615370502172/14b40b1f-8067-4f70-a6c6-8b2a2af8d076.jpg" alt="">
+                                       </a>
+                                    </div>
+                                    <div class="seller-name">
+                                        <a href="#">winky_axe </a>
+                                    </div>
+                                </div>
+                                <div class="gig-info">
+                                    <h3>
+                                        <a href="">
+                                            I will design your logo and branding
+                                        </a>
+                                    </h3>
+                                    <div class="rating-wrapper">
+                                        <span class="gig-rating"><i class="fas fa-star"></i> 5.0</span>(14)  
+                                    </div>
+                                    <div class="gig-ext">
+                                        <div class="gig-btn">
+                                            <button class="save-action">
+                                                <i class="fas fa-bars"></i>
+                                            </button>
+                                            <button class="save-gig">
+                                                <i class="fas fa-heart"></i> 
+                                            </button>
+                                        </div>
+                                        <div class="gig-price">
+                                            <a href="#"><span>Starting at</span> $60</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="gig-box">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/153039280/original/b7a0f5d8af69ac751ab2750f8fa0ca8eebc78345.png" title="" alt="">
+                                    </a>
+                                </div>
+                                <div class="seller-info">
+                                    <div class="seller-icon">
+                                       <a href="#">
+                                        <img src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/ca4e67db50716f8c7a84fae691911fd2-1615370502172/14b40b1f-8067-4f70-a6c6-8b2a2af8d076.jpg" alt="">
+                                       </a>
+                                    </div>
+                                    <div class="seller-name">
+                                        <a href="#">winky_axe </a>
+                                    </div>
+                                </div>
+                                <div class="gig-info">
+                                    <h3>
+                                        <a href="">
+                                            I will design your logo and branding
+                                        </a>
+                                    </h3>
+                                    <div class="rating-wrapper">
+                                        <span class="gig-rating"><i class="fas fa-star"></i> 5.0</span>(14)  
+                                    </div>
+                                    <div class="gig-ext">
+                                        <div class="gig-btn">
+                                            <button class="save-action">
+                                                <i class="fas fa-bars"></i>
+                                            </button>
+                                            <button class="save-gig">
+                                                <i class="fas fa-heart"></i> 
+                                            </button>
+                                        </div>
+                                        <div class="gig-price">
+                                            <a href="#"><span>Starting at</span> $60</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="gig-box">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/153039280/original/b7a0f5d8af69ac751ab2750f8fa0ca8eebc78345.png" title="" alt="">
+                                    </a>
+                                </div>
+                                <div class="seller-info">
+                                    <div class="seller-icon">
+                                       <a href="#">
+                                        <img src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/ca4e67db50716f8c7a84fae691911fd2-1615370502172/14b40b1f-8067-4f70-a6c6-8b2a2af8d076.jpg" alt="">
+                                       </a>
+                                    </div>
+                                    <div class="seller-name">
+                                        <a href="#">winky_axe </a>
+                                    </div>
+                                </div>
+                                <div class="gig-info">
+                                    <h3>
+                                        <a href="">
+                                            I will design your logo and branding
+                                        </a>
+                                    </h3>
+                                    <div class="rating-wrapper">
+                                        <span class="gig-rating"><i class="fas fa-star"></i> 5.0</span>(14)  
+                                    </div>
+                                    <div class="gig-ext">
+                                        <div class="gig-btn">
+                                            <button class="save-action">
+                                                <i class="fas fa-bars"></i>
+                                            </button>
+                                            <button class="save-gig">
+                                                <i class="fas fa-heart"></i> 
+                                            </button>
+                                        </div>
+                                        <div class="gig-price">
+                                            <a href="#"><span>Starting at</span> $60</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="gig-box">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/153039280/original/b7a0f5d8af69ac751ab2750f8fa0ca8eebc78345.png" title="" alt="">
+                                    </a>
+                                </div>
+                                <div class="seller-info">
+                                    <div class="seller-icon">
+                                       <a href="#">
+                                        <img src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/ca4e67db50716f8c7a84fae691911fd2-1615370502172/14b40b1f-8067-4f70-a6c6-8b2a2af8d076.jpg" alt="">
+                                       </a>
+                                    </div>
+                                    <div class="seller-name">
+                                        <a href="#">winky_axe </a>
+                                    </div>
+                                </div>
+                                <div class="gig-info">
+                                    <h3>
+                                        <a href="">
+                                            I will design your logo and branding
+                                        </a>
+                                    </h3>
+                                    <div class="rating-wrapper">
+                                        <span class="gig-rating"><i class="fas fa-star"></i> 5.0</span>(14)  
+                                    </div>
+                                    <div class="gig-ext">
+                                        <div class="gig-btn">
+                                            <button class="save-action">
+                                                <i class="fas fa-bars"></i>
+                                            </button>
+                                            <button class="save-gig">
+                                                <i class="fas fa-heart"></i> 
+                                            </button>
+                                        </div>
+                                        <div class="gig-price">
+                                            <a href="#"><span>Starting at</span> $60</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="gig-box">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/153039280/original/b7a0f5d8af69ac751ab2750f8fa0ca8eebc78345.png" title="" alt="">
+                                    </a>
+                                </div>
+                                <div class="seller-info">
+                                    <div class="seller-icon">
+                                       <a href="#">
+                                        <img src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/ca4e67db50716f8c7a84fae691911fd2-1615370502172/14b40b1f-8067-4f70-a6c6-8b2a2af8d076.jpg" alt="">
+                                       </a>
+                                    </div>
+                                    <div class="seller-name">
+                                        <a href="#">winky_axe </a>
+                                    </div>
+                                </div>
+                                <div class="gig-info">
+                                    <h3>
+                                        <a href="">
+                                            I will design your logo and branding
+                                        </a>
+                                    </h3>
+                                    <div class="rating-wrapper">
+                                        <span class="gig-rating"><i class="fas fa-star"></i> 5.0</span>(14)  
+                                    </div>
+                                    <div class="gig-ext">
+                                        <div class="gig-btn">
+                                            <button class="save-action">
+                                                <i class="fas fa-bars"></i>
+                                            </button>
+                                            <button class="save-gig">
+                                                <i class="fas fa-heart"></i> 
+                                            </button>
+                                        </div>
+                                        <div class="gig-price">
+                                            <a href="#"><span>Starting at</span> $60</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gig-list">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Trending in 
+                        <a href="#" target="_blank">Web Programming </a>
+                    </h2>
+                </div>
+                <div class="section-wrapper">
+                    <div class="gig-box temp-width">
+                        <div class="image">
+                            <a href="#">
+                                <img src="https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/153039280/original/b7a0f5d8af69ac751ab2750f8fa0ca8eebc78345.png" title="" alt="">
+                            </a>
+                        </div>
+                        <div class="seller-info">
+                            <div class="seller-icon">
+                               <a href="#">
+                                <img src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/ca4e67db50716f8c7a84fae691911fd2-1615370502172/14b40b1f-8067-4f70-a6c6-8b2a2af8d076.jpg" alt="">
+                               </a>
+                            </div>
+                            <div class="seller-name">
+                                <a href="#">winky_axe </a>
+                            </div>
+                        </div>
+                        <div class="gig-info">
+                            <h3>
+                                <a href="">
+                                    I will design your logo and branding
+                                </a>
+                            </h3>
+                            <div class="rating-wrapper">
+                                <span class="gig-rating"><i class="fas fa-star"></i> 5.0</span>(14)  
+                            </div>
+                            <div class="gig-ext">
+                                <div class="gig-btn">
+                                    <button class="save-action">
+                                        <i class="fas fa-bars"></i>
+                                    </button>
+                                    <button class="save-gig">
+                                        <i class="fas fa-heart"></i> 
+                                    </button>
+                                </div>
+                                <div class="gig-price">
+                                    <a href="#"><span>Starting at</span> $60</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="font-banner">
+            <div class="container">
+                <div class="box-wrapper">
+                    <div class="right-box-wrapper" >
+                        <a href="#">
+                            <div class="background-image" style="--image-url:url('https://fiverr-res.cloudinary.com/q_auto,f_auto/attachments/generic_asset/asset/579aa581549375f6f765229f28786684-1614853429793/Social%20Media.jpg');">
+                                <div class="text">
+                                    <h2>
+                                        Convert web visitors into customers
+                                    </h2>
+                                    <p>
+                                        Unlock the secrets of conversion rate optimization with this course.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gig-list row-list">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Editors' picks                      
+                    </h2>
+                    <a href="#" target="_blank">See More <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="section-wrapper">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="gig-box">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/153039280/original/b7a0f5d8af69ac751ab2750f8fa0ca8eebc78345.png" title="" alt="">
+                                    </a>
+                                </div>
+                                <div class="seller-info">
+                                    <div class="seller-icon">
+                                       <a href="#">
+                                        <img src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/ca4e67db50716f8c7a84fae691911fd2-1615370502172/14b40b1f-8067-4f70-a6c6-8b2a2af8d076.jpg" alt="">
+                                       </a>
+                                    </div>
+                                    <div class="seller-name">
+                                        <a href="#">winky_axe </a>
+                                    </div>
+                                </div>
+                                <div class="gig-info">
+                                    <h3>
+                                        <a href="">
+                                            I will design your logo and branding
+                                        </a>
+                                    </h3>
+                                    <div class="rating-wrapper">
+                                        <span class="gig-rating"><i class="fas fa-star"></i> 5.0</span>(14)  
+                                    </div>
+                                    <div class="gig-ext">
+                                        <div class="gig-btn">
+                                            <button class="save-action">
+                                                <i class="fas fa-bars"></i>
+                                            </button>
+                                            <button class="save-gig">
+                                                <i class="fas fa-heart"></i> 
+                                            </button>
+                                        </div>
+                                        <div class="gig-price">
+                                            <a href="#"><span>Starting at</span> $60</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="gig-box">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/153039280/original/b7a0f5d8af69ac751ab2750f8fa0ca8eebc78345.png" title="" alt="">
+                                    </a>
+                                </div>
+                                <div class="seller-info">
+                                    <div class="seller-icon">
+                                       <a href="#">
+                                        <img src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/ca4e67db50716f8c7a84fae691911fd2-1615370502172/14b40b1f-8067-4f70-a6c6-8b2a2af8d076.jpg" alt="">
+                                       </a>
+                                    </div>
+                                    <div class="seller-name">
+                                        <a href="#">winky_axe </a>
+                                    </div>
+                                </div>
+                                <div class="gig-info">
+                                    <h3>
+                                        <a href="">
+                                            I will design your logo and branding
+                                        </a>
+                                    </h3>
+                                    <div class="rating-wrapper">
+                                        <span class="gig-rating"><i class="fas fa-star"></i> 5.0</span>(14)  
+                                    </div>
+                                    <div class="gig-ext">
+                                        <div class="gig-btn">
+                                            <button class="save-action">
+                                                <i class="fas fa-bars"></i>
+                                            </button>
+                                            <button class="save-gig">
+                                                <i class="fas fa-heart"></i> 
+                                            </button>
+                                        </div>
+                                        <div class="gig-price">
+                                            <a href="#"><span>Starting at</span> $60</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="gig-box">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/153039280/original/b7a0f5d8af69ac751ab2750f8fa0ca8eebc78345.png" title="" alt="">
+                                    </a>
+                                </div>
+                                <div class="seller-info">
+                                    <div class="seller-icon">
+                                       <a href="#">
+                                        <img src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/ca4e67db50716f8c7a84fae691911fd2-1615370502172/14b40b1f-8067-4f70-a6c6-8b2a2af8d076.jpg" alt="">
+                                       </a>
+                                    </div>
+                                    <div class="seller-name">
+                                        <a href="#">winky_axe </a>
+                                    </div>
+                                </div>
+                                <div class="gig-info">
+                                    <h3>
+                                        <a href="">
+                                            I will design your logo and branding
+                                        </a>
+                                    </h3>
+                                    <div class="rating-wrapper">
+                                        <span class="gig-rating"><i class="fas fa-star"></i> 5.0</span>(14)  
+                                    </div>
+                                    <div class="gig-ext">
+                                        <div class="gig-btn">
+                                            <button class="save-action">
+                                                <i class="fas fa-bars"></i>
+                                            </button>
+                                            <button class="save-gig">
+                                                <i class="fas fa-heart"></i> 
+                                            </button>
+                                        </div>
+                                        <div class="gig-price">
+                                            <a href="#"><span>Starting at</span> $60</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="gig-box">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/153039280/original/b7a0f5d8af69ac751ab2750f8fa0ca8eebc78345.png" title="" alt="">
+                                    </a>
+                                </div>
+                                <div class="seller-info">
+                                    <div class="seller-icon">
+                                       <a href="#">
+                                        <img src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/ca4e67db50716f8c7a84fae691911fd2-1615370502172/14b40b1f-8067-4f70-a6c6-8b2a2af8d076.jpg" alt="">
+                                       </a>
+                                    </div>
+                                    <div class="seller-name">
+                                        <a href="#">winky_axe </a>
+                                    </div>
+                                </div>
+                                <div class="gig-info">
+                                    <h3>
+                                        <a href="">
+                                            I will design your logo and branding
+                                        </a>
+                                    </h3>
+                                    <div class="rating-wrapper">
+                                        <span class="gig-rating"><i class="fas fa-star"></i> 5.0</span>(14)  
+                                    </div>
+                                    <div class="gig-ext">
+                                        <div class="gig-btn">
+                                            <button class="save-action">
+                                                <i class="fas fa-bars"></i>
+                                            </button>
+                                            <button class="save-gig">
+                                                <i class="fas fa-heart"></i> 
+                                            </button>
+                                        </div>
+                                        <div class="gig-price">
+                                            <a href="#"><span>Starting at</span> $60</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="gig-box">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/153039280/original/b7a0f5d8af69ac751ab2750f8fa0ca8eebc78345.png" title="" alt="">
+                                    </a>
+                                </div>
+                                <div class="seller-info">
+                                    <div class="seller-icon">
+                                       <a href="#">
+                                        <img src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/ca4e67db50716f8c7a84fae691911fd2-1615370502172/14b40b1f-8067-4f70-a6c6-8b2a2af8d076.jpg" alt="">
+                                       </a>
+                                    </div>
+                                    <div class="seller-name">
+                                        <a href="#">winky_axe </a>
+                                    </div>
+                                </div>
+                                <div class="gig-info">
+                                    <h3>
+                                        <a href="">
+                                            I will design your logo and branding
+                                        </a>
+                                    </h3>
+                                    <div class="rating-wrapper">
+                                        <span class="gig-rating"><i class="fas fa-star"></i> 5.0</span>(14)  
+                                    </div>
+                                    <div class="gig-ext">
+                                        <div class="gig-btn">
+                                            <button class="save-action">
+                                                <i class="fas fa-bars"></i>
+                                            </button>
+                                            <button class="save-gig">
+                                                <i class="fas fa-heart"></i> 
+                                            </button>
+                                        </div>
+                                        <div class="gig-price">
+                                            <a href="#"><span>Starting at</span> $60</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+</body>
+</html>
