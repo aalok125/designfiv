@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+        <style>
+            
+            @media (min-width: 1240px){
+            .container{
+                max-width: 1400px;
+            }
+            }
+            .temp-width{
+                width: 220px;
+            }
+
+            body{
+                font-family: 'Be Vietnam', sans-serif;
+            }
+            a:hover{
+                text-decoration: none;
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+                font-weight: 700;
+                color: #404145;
+                margin-bottom: 0px;
+            }
+            .breadcrumbs{
+                margin-bottom: 10px;
+            }
+            .breadcrumbs ul{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: start;
+            }
+            .breadcrumbs ul li{
+                padding-right: 5px;
+                color: #95979d;
+                font-weight: 300;
+                font-size: 15px;
+            }
+            .breadcrumbs ul li a{
+                padding-right: 5px;
+                color: #95979d;
+            }
+            .breadcrumbs ul li a:hover{
+                text-decoration: underline;
+            }
+            .breadcrumbs ul li i{
+                font-size: 12px;
+            }
+
+            .pagination-wrapper{
+                text-align: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .pagination-wrapper ul.pagination li{
+                border-color: #95979d;
+                margin-right: 10px;
+
+            }
+            .pagination-wrapper ul.pagination li.active a{
+                font-weight: 600;
+                background-color: rgb(149 151 157 / 0%) !important;
+                border-color: #95979d;
+                color: #000;
+
+            }
+
+            .pagination-wrapper ul.pagination li:last-child{
+                margin-right: 0px;
+
+            }
+            .pagination-wrapper ul.pagination li a{
+                color: #000;
+            }
+
+            .category-page{
+                padding: 50px 0;
+            }
+
+            .category-page .title{
+                display: block;
+                text-align: left;
+                padding-bottom: 25px;
+                position: relative;
+            }
+
+            .category-page .title .tittle-text{
+                
+            }
+            .category-page .title .tittle-text h1{
+                font-size: 35px;
+                font-weight: 600;
+                line-height: 42px;
+            } 
+            .category-page .title .tittle-text p{
+                font-size: 15px;
+                font-weight: 500;
+                color: #95979d;
+                margin-bottom: 0px;
+                display: inline-block;
+                padding-right: 5px;
+            } 
+            .category-page .title .tittle-text .how-works{
+                display: inline-block;
+            } 
+            .category-page .title .tittle-text .how-works button{
+                background: none;
+                border: none;
+                color: #1dbf73;
+                font-size: 14px;
+                font-weight: 600;
+                padding: 0px;
+            }
+            .category-page .title .tittle-text .how-works button i{
+              padding-right: 2px;  
+            }
+
+            .category-service-type{
+
+                padding-bottom: 25px;
+            }
+            .category-service-type .service-type-box{
+                box-shadow: 0 0.14px 2.29266px rgb(0 0 0 / 3%), 0 0.37px 4.42626px rgb(0 0 0 / 5%), 0 3px 7px rgb(0 0 0 / 9%);
+                padding: 15px;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                flex-direction: column;
+                vertical-align: middle;
+                height: 150px;
+                border-radius: 5px;
+
+            }
+
+            .category-service-type .service-type-box:hover{
+                box-shadow: 0 3.4623px 6.1418px rgb(0 0 0 / 5%), 0 7.92923px 12.9218px rgb(0 0 0 / 5%), 0 9px 15px rgb(0 0 0 / 8%);
+            }
+
+            .category-service-type .service-type-box .service-type-image{
+                margin-bottom: 10px;
+                overflow: hidden;
+            }
+            .category-service-type .service-type-box .service-type-image img{
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+            }
+            .category-service-type .service-type-box .service-type-text{
+                
+            }
+            .category-service-type .service-type-box .service-type-text p.service-type-title{
+                margin-bottom: 0px;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 20px;
+                color: #000;
+            }
+
+            .gig-filter-box{
+                padding-bottom: 25px;
+            }
+            .gig-filter-box ul.gig-filter-list{
+                display: flex;
+                flex-direction: row;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .gig-filter-box ul.gig-filter-list li{
+                border: 1px solid #dadbdd;
+                padding: 5px 5px;
+                border-radius: 5px;
+                margin-right: 15px;
+            }
+            .gig-filter-box ul.gig-filter-list li:last-child{
+                margin-right: 0px;
+            }
+            .gig-filter-box ul.gig-filter-list li button{
+                border: none;
+                background: none;
+                font-size: 14px;
+                font-weight: 600;
+            }
+            .gig-filter-box ul.gig-filter-list li button i{
+                padding-left: 10px;
+                font-size: 12px;
+            }
+
+
+        .gig-list.row-list .section-wrapper .gig-box{
+            margin-bottom: 30px;
+        }
+
+        .gig-list .section-wrapper .gig-list-sort-count{
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+        }
+        .gig-list .section-wrapper .gig-list-sort-count .gig-count{
+            color: #7a7d85;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .gig-list .section-wrapper .gig-list-sort-count .gig-sort{
+            color: #7a7d85;
+            font-size: 16px;
+            font-weight: 400;
+        }
+        .gig-list .section-wrapper .gig-list-sort-count .gig-sort button{
+            font-weight: 600;
+            color: #000;
+            background: none;
+            border: none;
+        }
+        .gig-list .section-wrapper .gig-list-sort-count .gig-sort button i{
+            font-size: 14px;
+            padding-left: 5px;
+        }
+
+            .gig-list .section-wrapper .gig-box{
+            background-color: #fff;
+            position: relative;
+            border: 1px solid #e4e5e7;
+        }
+        .gig-list .section-wrapper .gig-box:hover .gig-info h3 a{
+            color: #02c2a9
+        }
+        .gig-list .section-wrapper .gig-box .image{
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        .gig-list .section-wrapper .gig-box .image img{
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+               object-fit: cover;
+        }
+        .gig-list .section-wrapper .gig-box .seller-info{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                    flex-direction: row;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-pack: start;
+                -ms-flex-pack: start;
+                    justify-content: start;
+            padding: 0px 10px;
+            margin-bottom: 10px;
+        }
+        .gig-list .section-wrapper .gig-box .seller-info .seller-icon{
+            height: 40px;
+            width: 40px;
+            overflow: hidden;
+            border-radius: 100%;
+            margin-right: 10px;
+        }
+        .gig-list .section-wrapper .gig-box .seller-info .seller-icon img{
+            width: 100%;
+            height: 100%;
+        }
+        .gig-list .section-wrapper .gig-box .seller-info .seller-name{
+            display: block;
+        }
+        .gig-list .section-wrapper .gig-box .seller-info .seller-name .seller-level{
+            display: block;
+            font-size: 13px;
+            list-style: 18px;
+            color: #b5b6ba;
+            font-weight: 500;
+        }
+        .gig-list .section-wrapper .gig-box .seller-info .seller-name a{
+            color: #222325;
+            font-size: 15px;
+            line-height: 20px;
+        }
+        .gig-list .section-wrapper .gig-box .gig-info{
+            
+        }
+        .gig-list .section-wrapper .gig-box .gig-info h3{
+            padding: 0px 10px;
+            font-size: 17px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            line-height: 23px;
+            text-align: left;
+        }
+        .gig-list .section-wrapper .gig-box .gig-info h3 a{
+            color: #222325;
+        }
+        .gig-list .section-wrapper .gig-box .gig-info .rating-wrapper{
+            display: block;
+            color: #b5b6ba;
+            margin-bottom: 10px;
+            padding: 0px 10px
+        }
+        .gig-list .section-wrapper .gig-box .gig-info .rating-wrapper .gig-rating{
+            color: #ffbe5b;
+            padding-right: 5px;
+            font-weight: 500;
+        }
+        .gig-list .section-wrapper .gig-box .gig-info .rating-wrapper .gig-rating i{
+            
+        }
+        .gig-list .section-wrapper .gig-box .gig-info .gig-ext{
+           display: -webkit-box;
+           display: -ms-flexbox;
+           display: flex; 
+           -webkit-box-pack: justify; 
+               -ms-flex-pack: justify; 
+                   justify-content: space-between;
+           -webkit-box-orient: horizontal;
+           -webkit-box-direction: normal;
+               -ms-flex-direction: row;
+                   flex-direction: row;
+           -webkit-box-align: center;
+               -ms-flex-align: center;
+                   align-items: center;
+           border-top: 1px solid #e4e5e7;
+           padding: 10px 10px
+        }
+        .gig-list .section-wrapper .gig-box .gig-info .gig-ext button{
+            background: none;
+            border: none;
+            padding: 0px 5px;
+            color: #b5b6ba;
+        }
+        .gig-list .section-wrapper .gig-box .gig-info .gig-ext button{
+            font-size: 17px;
+        }
+        .gig-list .section-wrapper .gig-box .gig-info .gig-ext .gig-price a{ 
+            color: #62646a;
+            font-size: 17px;
+            font-weight: 400;
+        }
+        .gig-list .section-wrapper .gig-box .gig-info .gig-ext .gig-price span{
+            font-size: 14px;
+            padding-right: 5px;
+        }
+
+        @media only screen and (max-width: 768px){
+            .gig-filter-box ul.gig-filter-list{
+                display: none;
+            }
+            .gig-list .section-wrapper .gig-list-sort-count{
+                display: none;
+            }
+        }
+                            
+        </style>
+
+
+        <section class="category-page">
+            <div class="container">
+                <div class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="#">Fuchas</a> <i class="fas fa-chevron-right"></i>
+                        </li>
+                        <li>
+                            <a href="#">Digital Marketing</a> <i class="fas fa-chevron-right"></i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="title">
+                   <div class="tittle-text">
+                        <h1>
+                            Social Media Marketing
+                        </h1>
+                        <p>
+                            Boost your online presence with compelling social media content.
+                        </p>
+                        <div class="how-works">
+                            <button><i class="fas fa-play-circle"></i> Learn more about Social Media Marketing</button>
+                        </div>
+                   </div>
+                </div>
+
+                <div class="category-service-type">
+                    <div class="service-type-box temp-width">
+                       <a href="#">
+                        <div class="service-type-image">
+                            <img src="https://fiverr-res.cloudinary.com/image/upload/v1584948052/general_assets/categories/nsc_01/2063.svg" alt="">
+                        </div>
+                        <div class="service-type-text">
+                            <p class="service-type-title">
+                                Social Media Management
+                            </p>
+                        </div>
+                       </a>
+                    </div>
+                </div>
+
+                <div class="gig-filter-box">
+                    <ul class="gig-filter-list">
+                        <li>
+                            <button>Service Options <i class="fas fa-chevron-down"></i></button>
+                        </li>
+                        <li>
+                            <button>Seller Details <i class="fas fa-chevron-down"></i></button>
+                        </li>
+                        <li>
+                            <button>Budget <i class="fas fa-chevron-down"></i></button>
+                        </li>
+                        <li>
+                            <button>Delivery Time <i class="fas fa-chevron-down"></i></button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="gig-list row-list">
+                    <div class="section-wrapper">
+                        <div class="gig-list-sort-count">
+                            <div class="gig-count">
+                                2,623 services available
+                            </div>
+                            <div class="gig-sort">
+                                Sort by <button> Best Selling <i class="fas fa-chevron-down"></i></button>
+                            </div>
+                        </div>
+                       <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="gig-box">
+                                    <div class="image">
+                                        <a href="#">
+                                            <img src="https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/153039280/original/b7a0f5d8af69ac751ab2750f8fa0ca8eebc78345.png" title="" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="seller-info">
+                                        <div class="seller-icon">
+                                        <a href="#">
+                                            <img src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/ca4e67db50716f8c7a84fae691911fd2-1615370502172/14b40b1f-8067-4f70-a6c6-8b2a2af8d076.jpg" alt="">
+                                        </a>
+                                        </div>
+                                        <div class="seller-name">
+                                            <a href="#">winky_axe </a>
+                                        </div>
+                                    </div>
+                                    <div class="gig-info">
+                                        <h3>
+                                            <a href="">
+                                                I will design your logo and branding
+                                            </a>
+                                        </h3>
+                                        <div class="rating-wrapper">
+                                            <span class="gig-rating"><i class="fas fa-star"></i> 5.0</span>(14)  
+                                        </div>
+                                        <div class="gig-ext">
+                                            <div class="gig-btn">
+                                                <button class="save-action">
+                                                    <i class="fas fa-bars"></i>
+                                                </button>
+                                                <button class="save-gig">
+                                                    <i class="fas fa-heart"></i> 
+                                                </button>
+                                            </div>
+                                            <div class="gig-price">
+                                                <a href="#"><span>Starting at</span> $60</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="gig-box">
+                                    <div class="image">
+                                        <a href="#">
+                                            <img src="https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/153039280/original/b7a0f5d8af69ac751ab2750f8fa0ca8eebc78345.png" title="" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="seller-info">
+                                        <div class="seller-icon">
+                                        <a href="#">
+                                            <img src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/ca4e67db50716f8c7a84fae691911fd2-1615370502172/14b40b1f-8067-4f70-a6c6-8b2a2af8d076.jpg" alt="">
+                                        </a>
+                                        </div>
+                                        <div class="seller-name">
+                                            <a href="#">winky_axe </a>
+                                        </div>
+                                    </div>
+                                    <div class="gig-info">
+                                        <h3>
+                                            <a href="">
+                                                I will design your logo and branding
+                                            </a>
+                                        </h3>
+                                        <div class="rating-wrapper">
+                                            <span class="gig-rating"><i class="fas fa-star"></i> 5.0</span>(14)  
+                                        </div>
+                                        <div class="gig-ext">
+                                            <div class="gig-btn">
+                                                <button class="save-action">
+                                                    <i class="fas fa-bars"></i>
+                                                </button>
+                                                <button class="save-gig">
+                                                    <i class="fas fa-heart"></i> 
+                                                </button>
+                                            </div>
+                                            <div class="gig-price">
+                                                <a href="#"><span>Starting at</span> $60</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="gig-box">
+                                    <div class="image">
+                                        <a href="#">
+                                            <img src="https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/153039280/original/b7a0f5d8af69ac751ab2750f8fa0ca8eebc78345.png" title="" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="seller-info">
+                                        <div class="seller-icon">
+                                        <a href="#">
+                                            <img src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/ca4e67db50716f8c7a84fae691911fd2-1615370502172/14b40b1f-8067-4f70-a6c6-8b2a2af8d076.jpg" alt="">
+                                        </a>
+                                        </div>
+                                        <div class="seller-name">
+                                            <a href="#">winky_axe </a>
+                                        </div>
+                                    </div>
+                                    <div class="gig-info">
+                                        <h3>
+                                            <a href="">
+                                                I will design your logo and branding
+                                            </a>
+                                        </h3>
+                                        <div class="rating-wrapper">
+                                            <span class="gig-rating"><i class="fas fa-star"></i> 5.0</span>(14)  
+                                        </div>
+                                        <div class="gig-ext">
+                                            <div class="gig-btn">
+                                                <button class="save-action">
+                                                    <i class="fas fa-bars"></i>
+                                                </button>
+                                                <button class="save-gig">
+                                                    <i class="fas fa-heart"></i> 
+                                                </button>
+                                            </div>
+                                            <div class="gig-price">
+                                                <a href="#"><span>Starting at</span> $60</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="gig-box">
+                                    <div class="image">
+                                        <a href="#">
+                                            <img src="https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/153039280/original/b7a0f5d8af69ac751ab2750f8fa0ca8eebc78345.png" title="" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="seller-info">
+                                        <div class="seller-icon">
+                                        <a href="#">
+                                            <img src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/ca4e67db50716f8c7a84fae691911fd2-1615370502172/14b40b1f-8067-4f70-a6c6-8b2a2af8d076.jpg" alt="">
+                                        </a>
+                                        </div>
+                                        <div class="seller-name">
+                                            <a href="#">winky_axe </a>
+                                        </div>
+                                    </div>
+                                    <div class="gig-info">
+                                        <h3>
+                                            <a href="">
+                                                I will design your logo and branding
+                                            </a>
+                                        </h3>
+                                        <div class="rating-wrapper">
+                                            <span class="gig-rating"><i class="fas fa-star"></i> 5.0</span>(14)  
+                                        </div>
+                                        <div class="gig-ext">
+                                            <div class="gig-btn">
+                                                <button class="save-action">
+                                                    <i class="fas fa-bars"></i>
+                                                </button>
+                                                <button class="save-gig">
+                                                    <i class="fas fa-heart"></i> 
+                                                </button>
+                                            </div>
+                                            <div class="gig-price">
+                                                <a href="#"><span>Starting at</span> $60</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="gig-box">
+                                    <div class="image">
+                                        <a href="#">
+                                            <img src="https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/153039280/original/b7a0f5d8af69ac751ab2750f8fa0ca8eebc78345.png" title="" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="seller-info">
+                                        <div class="seller-icon">
+                                        <a href="#">
+                                            <img src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/ca4e67db50716f8c7a84fae691911fd2-1615370502172/14b40b1f-8067-4f70-a6c6-8b2a2af8d076.jpg" alt="">
+                                        </a>
+                                        </div>
+                                        <div class="seller-name">
+                                            <a href="#">winky_axe </a>
+                                        </div>
+                                    </div>
+                                    <div class="gig-info">
+                                        <h3>
+                                            <a href="">
+                                                I will design your logo and branding
+                                            </a>
+                                        </h3>
+                                        <div class="rating-wrapper">
+                                            <span class="gig-rating"><i class="fas fa-star"></i> 5.0</span>(14)  
+                                        </div>
+                                        <div class="gig-ext">
+                                            <div class="gig-btn">
+                                                <button class="save-action">
+                                                    <i class="fas fa-bars"></i>
+                                                </button>
+                                                <button class="save-gig">
+                                                    <i class="fas fa-heart"></i> 
+                                                </button>
+                                            </div>
+                                            <div class="gig-price">
+                                                <a href="#"><span>Starting at</span> $60</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+                <div class="pagination-wrapper">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                          </li>
+                          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                </div>
+            </div>
+
+           
+        </section>
+</body>
+</html>
