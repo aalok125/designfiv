@@ -44,8 +44,12 @@
                 list-style: none;
                 padding: 0;
                 margin: 0;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                justify-content: start;
+                -webkit-box-pack: start;
+                    -ms-flex-pack: start;
+                        justify-content: start;
             }
             .breadcrumbs ul li{
                 padding-right: 5px;
@@ -66,8 +70,12 @@
 
             .pagination-wrapper{
                 text-align: center;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                justify-content: center;
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
             }
 
             .pagination-wrapper ul.pagination li{
@@ -138,12 +146,22 @@
                 padding-bottom: 25px;
             }
             .category-service-type .service-type-box{
-                box-shadow: 0 0.14px 2.29266px rgb(0 0 0 / 3%), 0 0.37px 4.42626px rgb(0 0 0 / 5%), 0 3px 7px rgb(0 0 0 / 9%);
+                -webkit-box-shadow: 0 0.14px 2.29266px rgb(0 0 0 / 3%), 0 0.37px 4.42626px rgb(0 0 0 / 5%), 0 3px 7px rgb(0 0 0 / 9%);
+                        box-shadow: 0 0.14px 2.29266px rgb(0 0 0 / 3%), 0 0.37px 4.42626px rgb(0 0 0 / 5%), 0 3px 7px rgb(0 0 0 / 9%);
                 padding: 15px;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                align-items: flex-start;
-                justify-content: center;
-                flex-direction: column;
+                -webkit-box-align: start;
+                    -ms-flex-align: start;
+                        align-items: flex-start;
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
                 vertical-align: middle;
                 height: 150px;
                 border-radius: 5px;
@@ -151,7 +169,8 @@
             }
 
             .category-service-type .service-type-box:hover{
-                box-shadow: 0 3.4623px 6.1418px rgb(0 0 0 / 5%), 0 7.92923px 12.9218px rgb(0 0 0 / 5%), 0 9px 15px rgb(0 0 0 / 8%);
+                -webkit-box-shadow: 0 3.4623px 6.1418px rgb(0 0 0 / 5%), 0 7.92923px 12.9218px rgb(0 0 0 / 5%), 0 9px 15px rgb(0 0 0 / 8%);
+                        box-shadow: 0 3.4623px 6.1418px rgb(0 0 0 / 5%), 0 7.92923px 12.9218px rgb(0 0 0 / 5%), 0 9px 15px rgb(0 0 0 / 8%);
             }
 
             .category-service-type .service-type-box .service-type-image{
@@ -161,7 +180,8 @@
             .category-service-type .service-type-box .service-type-image img{
                 width: 50px;
                 height: 50px;
-                object-fit: cover;
+                -o-object-fit: cover;
+                   object-fit: cover;
             }
             .category-service-type .service-type-box .service-type-text{
                 
@@ -178,8 +198,13 @@
                 padding-bottom: 25px;
             }
             .gig-filter-box ul.gig-filter-list{
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                flex-direction: row;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: row;
+                        flex-direction: row;
                 list-style: none;
                 padding: 0;
                 margin: 0;
@@ -210,8 +235,12 @@
         }
 
         .gig-list .section-wrapper .gig-list-sort-count{
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: space-between;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
             padding-bottom: 10px;
         }
         .gig-list .section-wrapper .gig-list-sort-count .gig-count{
